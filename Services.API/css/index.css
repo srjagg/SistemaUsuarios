@@ -1,0 +1,11 @@
+.content{
+    border: solid 1px green;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.row{
+    display:flex;
+}
+.requerido{
+    color: red;
+}

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbUsuarios" Class="DBUsuariosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-AFSKQ5EE;Initial Catalog=dbUsuarios;Integrated Security=True" SettingsObjectName="Services.Data.Properties.Settings" SettingsPropertyName="dbUsuariosConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_usuariosConsultarCorreo" Method="usp_usuariosConsultarCorreo">
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_usuariosConsultarCorreoResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
