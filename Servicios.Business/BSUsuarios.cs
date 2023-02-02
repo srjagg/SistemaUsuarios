@@ -69,31 +69,31 @@ namespace Servicios.Business
         {
 
             DBUsuariosDataContext objData = null;
-            int infoResultado=0;
+            int infoResultado;
 
             try
             {
                 usuarios validarEmail = ObtenerPorCorreo(user.Correo);
 
                 if (validarEmail != null)
-                    Console.WriteLine("El correo ya se encuentra registrado");
+                    return 0;
                 else
                 {
                     string pass = encriptarPass(user.Contraseña);
                     objData = new DBUsuariosDataContext(this.ConnectionString);
                     infoResultado = objData.usp_usuariosInsertar(user.id, user.Nombre, pass, user.Correo);
+                    return infoResultado;
                 }
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
+                return 0;
             }
             finally
             {
                 objData = null;
             }
-
-            return infoResultado;
         }
 
         public string encriptarPass(string pass)

@@ -16,6 +16,7 @@ function servicioCrear(dataUser,response) {
         type: "POST",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
+            swal.fire('Proceso exitoso', 'Usuario guardado con éxito', 'success');
             response(data);
         },
         error: function (httpReq, status, exception) {
@@ -34,9 +35,7 @@ function CrearUsuario() {
         "Contraseña": $("#txtContraseña").val(),
         "Correo": $("#txtCorreo").val(),
     });
-    servicioCrear(dataJson, function (data) {
-        swal.fire('Proceso exitoso', 'Usuario guardado con éxito', 'success');
-       
+    servicioCrear(dataJson, function (data) {       
         return data;
     });
    

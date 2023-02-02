@@ -12,37 +12,76 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css" />
 </head>
 <body>
+    <div class="card border-secondary mb-3" style="max-width: 50rem; ">
+        <div class="card-header">Usuarios</div>
+        <div class="card-body text-secondary">
+            <h5 class="card-title">Registro de Usuarios</h5>
+            <form class="row g-3  needs-validation"  id="form1" name="form1" method="post" action="usuario.aspx" runat="server" novalidate="novalidate">
+                <input type="hidden" id="hfIDCliente" value="-1" />
+                <div>
+                    <div class="container mt-8 mb-5" >
 
-    <form id="form1" runat="server">
-        <input type="hidden" id="hfIDCliente" value="-1" />
-        <div>
-            <div class="container mt-8 mb-5" style="padding-top:50px">
-                
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Nombre</label>
-                    <div class="col-sm-10">
-                        <input type="text"  class="form-control" id="txtNombre" />
+                        <div class="mb-3 row">
+                            <label for="txtNombre" class="col-sm-2 col-form-label">Nombre</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="txtNombre" required ="required"/>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese un nombre.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="txtContraseña" class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="txtContraseña" required ="required"/>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una contraseña.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="txtCorreo" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="txtCorreo" required ="required" />
+                                <div class="invalid-feedback">
+                                    Por favor ingrese el correo.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto"> 
+                            <button type="submit" class="btn btn-primary mb-3" onclick="CrearUsuario()">Guardar</button>
+                            <!--<button type="submit" id="btnGuardar" name="btnGuardar" class="btn btn-outline-primary">Guardar</button>-->
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="txtContraseña" />
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="text"  class="form-control" id="txtCorreo" />
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3" onclick="CrearUsuario()">Guardar</button>
-                </div>
-            </div>
 
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
     <script src="../js/busy_indicator.js"></script>
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
