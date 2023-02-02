@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="col-auto"> 
-                            <button type="submit" class="btn btn-primary mb-3" onclick="CrearUsuario()">Guardar</button>
+                            <button type="submit" class="btn btn-primary mb-3" id="Guardar">Guardar</button>
                             <!--<button type="submit" id="btnGuardar" name="btnGuardar" class="btn btn-outline-primary">Guardar</button>-->
                         </div>
                     </div>
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <script>
+<%--    <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
             'use strict'
@@ -74,12 +74,11 @@
                         if (!form.checkValidity()) {
                             event.preventDefault()
                             event.stopPropagation()
-                        }
-
+                        } 
                         form.classList.add('was-validated')
                     }, false)
                 })
-        })()
+        })()--%>
     </script>
 
     <script src="../js/busy_indicator.js"></script>
@@ -88,7 +87,7 @@
     <script src="../js/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
     <script src="../js/sweetalert2.js"></script>
-    <!--script src="./js/index.min.js"></script-->
+    <%--<script src="/Scripts/usuarios.js"></script>--%>
     <script src="<%= ResolveClientUrl("~/scripts/usuarios.js") %>"></script>
 </body>
 </html>
